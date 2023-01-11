@@ -41,8 +41,15 @@ def check(text):
         return result
 
     # 최대 500자까지 가능.
-    if len(text) > 500:
-        return Checked(result=False)
+    while len(text) > 500:
+        temp_str = text[:500]
+        last_space = temp_Str.rfind(' ')
+        temp_str = text[0:last_space]
+        ready_list.append(temp_str)
+        
+        text = text[last_space:]
+    ready_list.append(text) # 마지막 500 미만의 문장도 추가하는 것
+    return ready_list
 
     payload = {
         '_callback': 'window.__jindo2_callback._spellingCheck_0',
