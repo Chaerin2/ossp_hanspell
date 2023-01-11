@@ -28,6 +28,20 @@ $ python setup.py install
 
 를 입력하시거나, 또는 hanspell 폴더를 자신의 프로젝트 폴더 안에 포함시키면 됩니다.
 
+## 추가설명(상세 설명) *
+code 버튼 클릭 후 zip 파일을 다운로드 받은 후
+로컬디스크 속 파이썬 프로젝트 폴더를 찾아 
+이 폴더 안에 넣어준다.
+폴더를 못 찾겠는 경우엔
+
+```python
+>>> import os
+>>> print(os.getcwd())
+C:\Program Files\Python38
+```
+
+위 코드 실행시 폴더 경로를 찾을 수 있다. 
+
 ### 필요한 라이브러리
 
 - requests
