@@ -52,5 +52,5 @@ for ready in ready_list:
   checked_sent = spelled_sent.checked
   
   f = open("result.txt",'w',encoding='cp949')
-  f.write(checked_list)
+  f.write(checked_sent)
   f.close()
