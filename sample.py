@@ -49,7 +49,7 @@ ready_list.apeend(text)
 new_text = ""
 for ready in ready_list:
   spelled_sent = spell_checker.check(ready)
-  checked_sent = spell_sent.checked
+  checked_sent = spelled_sent.checked
   
   f = open("result.txt",'w',encoding='cp949')
   f.write(checked_list)
