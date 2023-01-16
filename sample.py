@@ -41,6 +41,7 @@ while (len(text)>500):
     last_space = temp_str.rfind(' ')
     temp_str = text[0 : last_space]
     ready_list.append(temp_str)
+    ready_list.append('\n')
     
     text = text[last_space:]
 ready_list.apeend(text)
@@ -51,6 +52,6 @@ for ready in ready_list:
   spelled_sent = spell_checker.check(ready)
   checked_sent = spelled_sent.checked
   
-  f = open("result.txt",'w',encoding='cp949')
+  f = open("result.txt",'w',encoding='utf8')
   f.write(checked_sent)
   f.close()
