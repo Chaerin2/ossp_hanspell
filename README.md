@@ -136,10 +136,28 @@ from hanspell.constants import CheckResult
 
 ## 파일 전체 검사 방법*
 
-file.py 파일 추가했습니다. 
+sample.py 파일 추가했습니다. 
 
-이 파일은 500자 이상 글자수를 검사해서 검사가 완료된 문장을
-새로운 파일에 저장 
+
+1.txt 파일에 검사하고 싶은 텍스트 파일을 넣은 후 진행 해야합니다
+
+```python
+>>>fp = open("1.txt",'r',encoding='cp949')
+>>>text = fp.readlines()
+>>>fp.close()
+```
+
+```python
+>>>num = len(text)
+>>>spelled_sent = spell_checker.check(text)
+>>>for i in range(0,num):
+      checked_sent = spelled_sent[i].checked
+      
+      f = open("result.txt",'a',encoding='utf8')
+      f.write(checked_sent)
+      f.write('\n')
+      f.close()
+```
 
 
 ## 라이브러리 사용에 대한 안내
