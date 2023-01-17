@@ -1,22 +1,25 @@
 from hanspell import spell_checker
 
 fp = open('1.txt','r',encoding='cp949')
-text = fp.readlines()
 txt = fp.read()
 fp.close()
+
+p = open('1.txt','r',encoding='cp949')
+text = p.readlines()
+p.close()
 
 ready_list=[]
 
 
 if (len(text)<500):
-  for i in len(text):
-        ready_list.append(text[i])
-
-else:
-  while (len(text)>500):
-    for i in len(text):
-      ready_list.append(text[i])
-      
+  for i in text:
+        ready_list.append(text)
+while (len(text)>500):
+  for i in text:
+    ready_list.append(text)
+ ready_list.append(text)
+  
+  
 #    temp_str = text[:500]
 #    last_space = temp_str.rfind(' ')
 #    temp_str = text[0 : last_space]
