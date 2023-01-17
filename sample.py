@@ -1,27 +1,29 @@
 from hanspell import spell_checker
 
 fp = open('1.txt','r',encoding='cp949')
-text = fp.read()
+text = fp.readlines()
+txt = fp.read()
 fp.close()
 
 ready_list=[]
 
 
 if (len(text)<500):
-  ready_list.append(text)
+  for i in len(text):
+        ready_list.append(text[i])
 
-while (len(text)>500):
-    temp_str = text[:500]
-    last_space = temp_str.rfind(' ')
-    temp_str = text[0 : last_space]
-    ready_list.append(temp_str)
+else:
+  while (len(text)>500):
+    for i in len(text):
+      ready_list.append(text[i])
+      
+#    temp_str = text[:500]
+#    last_space = temp_str.rfind(' ')
+#    temp_str = text[0 : last_space]
+#    ready_list.append(temp_str)    
+#    text = text[last_space:]
+#ready_list.append(text)
 
-    
-    text = text[last_space:]
-ready_list.append(text)
-
-
-new_text = ""
 for ready in ready_list:
   spelled_sent = spell_checker.check(ready)
   checked_sent = spelled_sent.checked
