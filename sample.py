@@ -1,36 +1,18 @@
 from hanspell import spell_checker
 
+# 문자열 한줄씩 읽어서 리스트에 저장 
 fp = open('1.txt','r',encoding='cp949')
-txt = fp.read()
+text = fp.readlines()
 fp.close()
 
-p = open('1.txt','r',encoding='cp949')
-text = p.readlines()
-p.close()
+num = len(text)
 
-ready_list=[]
+spelled_sent = spell_checker.check(text)
 
-
-if (len(text)<500):
-  for i in text:
-        ready_list.append(text)
-while (len(text)>500):
-  for i in text:
-    ready_list.append(text)
- ready_list.append(text)
+for i in range(0,num):
+  checked_sent = spelled_sent[i].checked
   
-  
-#    temp_str = text[:500]
-#    last_space = temp_str.rfind(' ')
-#    temp_str = text[0 : last_space]
-#    ready_list.append(temp_str)    
-#    text = text[last_space:]
-#ready_list.append(text)
-
-for ready in ready_list:
-  spelled_sent = spell_checker.check(ready)
-  checked_sent = spelled_sent.checked
-  
-  f = open("result.txt",'a+',encoding='utf8')
+  f = open("result.txt",'a',encoding='utf8')
   f.write(checked_sent)
+  f.write('\n')
   f.close()
