@@ -136,7 +136,9 @@ from hanspell.constants import CheckResult
 
 ## 파일 전체 검사 방법*
 
-sample.py 파일 추가했습니다. 
+'sample.py', '1.txt', 'result.txt' 
+
+세 파일 추가했습니다. 
 
 
 1.txt 파일에 검사하고 싶은 텍스트 파일을 넣은 후 진행 해야합니다
@@ -145,9 +147,6 @@ sample.py 파일 추가했습니다.
 >>>fp = open("1.txt",'r',encoding='cp949')
 >>>text = fp.readlines()
 >>>fp.close()
-```
-
-```python
 >>>num = len(text)
 >>>spelled_sent = spell_checker.check(text)
 >>>for i in range(0,num):
@@ -159,6 +158,11 @@ sample.py 파일 추가했습니다.
       f.close()
 ```
 
+검사가 완료되면 'result.txt'파일에 저장되게 됩니다.
+
+다음 검사를 진행하기 위해서는 'result.txt' 에 있는 이전의 검사 결과를 
+
+지운 후 사용해야합니다.
 
 ## 라이브러리 사용에 대한 안내
 
@@ -173,7 +177,9 @@ sample.py 파일 추가했습니다.
 - **버전 1.1**: list 타입으로 주고받는 기능 지원, 처리속도 향상
 - **버전 1.0**: 첫 버전 릴리즈
 
-## 기존 소스와의 차별점
+## 기존 소스와의 차별점 *
+
+새로 추가한 내용 옆에 * 표기 해놓았습니다. 
 
 - 설치과정 구체적인 설명 추가 
 - 500자 이상 텍스트도 검사 가능
